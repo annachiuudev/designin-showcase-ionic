@@ -4,6 +4,8 @@ import { MockBackendService } from '../../services/mockbackendService';
 import { DesignerService } from '../../services/designerService';
 import { Subscription } from '../../../node_modules/rxjs/Subscription';
 
+
+
 @Component({
   selector: 'reviews',
   templateUrl: 'reviews.html'
@@ -27,17 +29,6 @@ export class ReviewsComponent {
   goToComment(review) {
     console.log('review', review)
     this.onCommentClick.emit(review);
-  }
-
-  scrollToBottom() {
-    console.log('SCROLL')
-    let chatbody = $(`.chat-window`);
-    try {
-      var scrollLength = chatbody[0].scrollHeight - chatbody[0].clientHeight
-      chatbody.animate({ scrollTop: scrollLength }, 300);
-    } catch (err) {
-      console.error(err);
-    }
   }
 
 

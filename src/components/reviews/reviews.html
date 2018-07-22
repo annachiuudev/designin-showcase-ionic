@@ -14,12 +14,12 @@
                 <span class="review-likes">{{review?.likes}}</span>
             </div>
 
-            <div  class="comment-display">
+            <div  class="comment-display"  (tap)="goToComment(review)">
                 <ion-icon name="chatbubbles"></ion-icon>
                 <span class="review-comment">{{review?.commentsCount}}</span>
             </div>
         </div>
-            <label class="icon-switch like-switch" (tap)="goToComment(review)">
+            <label class="icon-switch like-switch">
                 <input type="checkbox">
                 <div class="checkmark">
                     <ion-icon name="heart-outline"></ion-icon>
