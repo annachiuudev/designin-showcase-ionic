@@ -1,0 +1,67 @@
+page-add-review {
+    font-family: $font-family-oxygen;
+
+
+    .scroll-content {
+        background: color($colors, bg-gray);
+        padding: 40px;
+        // padding-top: 50px !important;
+       
+        @extend .flex;
+        @extend .flex-column;
+        @extend .justify-between;
+
+        align-items: center;
+
+    }
+    textarea {
+        width: 100%;
+        height: 150px;
+        border: none;
+        padding: 20px;
+        background: transparent;
+        color: white;
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+
+
+    .question {
+        color: white;
+        font-weight: lighter;
+        
+    }
+
+    .question-sub {
+        color: white;
+        opacity: 0.6;
+        text-align: center;
+        font-size: 1.3rem;
+        padding:  0px 60px;
+        margin-bottom: 20px;
+    }
+
+    ion-input {
+        margin-bottom: 20px;
+    }
+
+    .text-input {
+        margin: 20px;
+    }
+    
+    .submit-btn {
+       width: fit-content;
+       p {
+           color: white;
+       }
+    }
+
+    .icon-bar {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+}
+

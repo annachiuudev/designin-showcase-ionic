@@ -1,0 +1,21 @@
+<ion-header>
+      <p class="header-title">Designers</p>
+</ion-header>
+
+<ion-content>
+
+  <div class="card" *ngFor="let designer of designers" (tap)="select(designer)">
+    <div class="image-container">
+      <img [src]="designer?.imgUrl">
+      <div class="linear-gray-overlay"></div>
+    </div>
+
+    <div class="card-content flex flex-column">
+
+      <div>
+      <p class="card-title">{{designer.name}}</p>
+      <p class="card-subtitle">{{designer.company.catchPhrase}}</p>
+    </div>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,33 @@
+page-portfolio {
+ 
+        font-family: $font-family-oxygen;
+    
+        .header-content-wrapper {
+                display: grid;
+                // grid-template: 130px 10px 10px auto;
+
+
+              text-align: center;
+              p {
+                      margin-bottom: 6px;
+              }
+
+              button {
+                      width: fit-content;
+                      justify-self: center;
+              }
+        }
+
+        .circle-icon {
+                margin-bottom: 8px;
+        }
+
+        .location {
+                justify-content: center;
+                font-size: 1rem;
+        }
+
+        .location ion-icon {
+                margin-right: 6px;
+        }
+}

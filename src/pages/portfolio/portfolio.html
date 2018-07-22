@@ -1,0 +1,36 @@
+<ion-content>
+
+  <div class="big-header header-content-wrapper" padding>
+    <div class="flex flex-row justify-between">
+      <button ion-button icon-only (tap)="goBack() ">
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </div>
+    <!-- <div class="header-content-wrapper"> -->
+      <div>
+      <div class="circle-icon">
+        <img [src]="designer?.imgUrl">
+      </div>
+      <p>{{designer.name}}</p>
+      <div class="flex flex-row location">
+        <ion-icon name="pin"></ion-icon>
+        <p>{{designer.address.city}}</p>
+      </div>
+    </div>
+      <button (tap)="goAddReview()" ion-button round btn-sm>Write Review</button>
+    <!-- </div> -->
+  </div>
+
+  <ion-segment [(ngModel)]="segment" color="primary" (ionChange)="segmentChanged($event)">
+    <ion-segment-button value="photos">
+      Portfolio
+    </ion-segment-button>
+    <ion-segment-button value="reviews">
+      Reviews
+    </ion-segment-button>
+  </ion-segment>
+
+  <album *ngIf="segment == 'photos'" [albums]="albums"></album>
+  <reviews *ngIf="segment == 'reviews'"  [reviews]="reviews" (onCommentClick)="goToCommentChat($event)"></reviews>
+
+</ion-content>

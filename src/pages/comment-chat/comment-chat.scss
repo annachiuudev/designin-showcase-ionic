@@ -1,0 +1,60 @@
+page-comment-chat {
+    font-family: $font-family-oxygen;
+
+    .scroll-content {
+        overflow: hidden;
+        display: flex;
+        flex-flow: column;
+        height: calc(100% - 62px);
+      
+    }
+
+    .review-dark-content {
+        display: grid;
+        grid-template-rows: 50px 40px auto;
+        
+        justify-items: center;
+        padding: 30px;
+        padding-top: 0;
+    }
+
+    .review-dark-content .circle-icon,.review-title,.review-text {
+        grid-column: 1;
+        color: white;   
+        text-align: center;
+    }
+
+    .review-title {
+        align-self: start;
+    }
+
+    .review-dark {
+        background: color($colors, bg-gray);
+        color: white !important;
+        flex: 0 1 auto;
+
+    }
+
+    .chat-window {
+        padding: 20px;
+        overflow-y: scroll;
+        flex: 1 1 auto;
+
+    }
+
+    .chat-bar {
+        flex: 0 0 64px;
+        background: color($colors, stepper-gray);
+        box-shadow: 0 2px 14px 2px rgba(0, 0, 0, 0.08);
+        align-items: center;
+    }
+
+    .chat-bar input {
+        color: color($colors, text-gray);
+        text-align: left;
+        background: transparent;
+        border: none;
+
+        padding: 30px 20px;
+    }
+}

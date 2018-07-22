@@ -1,0 +1,69 @@
+<ion-header>
+  <button (tap)="goBack()" class="header-left-btn" ion-button icon-only>
+    <ion-icon name="arrow-back"></ion-icon>
+  </button>
+  <p class="header-title">Add Review</p>
+
+</ion-header>
+
+
+<ion-content>
+
+  <div>
+    <h2 class="question" text-center>Check all areas of service you felt {{designer?.name}} did well in.</h2>
+
+    <p class="question-sub">Select services to help us improve your future search results</p>
+
+    <div class="icon-bar">
+
+
+      <label class="icon-switch">
+        <input type="checkbox" [(ngModel)]="services.service1" >
+        <div class="checkmark">
+          <div class="icon-wrapper">
+            <ion-icon name="brush"></ion-icon>
+          </div>
+        </div>
+      </label>
+
+      <label class="icon-switch">
+        <input type="checkbox" [(ngModel)]="services.service2">
+        <div class="checkmark">
+          <div class="icon-wrapper">
+            <ion-icon name="bulb"></ion-icon>
+          </div>
+        </div>
+      </label>
+
+      <label class="icon-switch">
+        <input type="checkbox" [(ngModel)]="services.service3">
+        <div class="checkmark">
+          <div class="icon-wrapper">
+            <ion-icon name="bookmarks"></ion-icon>
+          </div>
+        </div>
+      </label>
+
+      <label class="icon-switch">
+        <input type="checkbox" [(ngModel)]="services.service4">
+        <div class="checkmark">
+          <div class="icon-wrapper">
+            <ion-icon name="camera"></ion-icon>
+          </div>
+        </div>
+      </label>
+
+    </div>
+  </div>
+
+  <div>
+    <h2 class="question" text-center>Share your experience!</h2>
+
+    <textarea placeholder="Write a review" [(ngModel)]="review"></textarea>
+  </div>
+
+  <button class="submit-btn" (tap)="onSubmit()" ion-button outline round>
+    Submit
+  </button>
+
+</ion-content>

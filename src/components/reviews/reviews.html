@@ -1,0 +1,30 @@
+<div class="review-card" *ngFor="let review of reviews"  tappable>
+    <div class="review-content">
+        <div class="circle-icon sm">
+            <img [src]="review.userImgUrl">
+        </div>
+        <p class="review-title">{{review?.user?.name}}</p>
+        <!-- <p class="review-title">{{review.user.name}}</p> -->
+        <p class="review-text" tappable (tap)="goToComment(review)" >{{review?.body}}</p>
+
+        <div class="btn-bar flex flex-row justify-between">
+            <div class="flex flex-row">
+            <div class="like-display">
+                <ion-icon name="heart"></ion-icon>
+                <span class="review-likes">{{review?.likes}}</span>
+            </div>
+
+            <div  class="comment-display">
+                <ion-icon name="chatbubbles"></ion-icon>
+                <span class="review-comment">{{review?.commentsCount}}</span>
+            </div>
+        </div>
+            <label class="icon-switch like-switch" (tap)="goToComment(review)">
+                <input type="checkbox">
+                <div class="checkmark">
+                    <ion-icon name="heart-outline"></ion-icon>
+                </div>
+            </label>
+        </div>
+    </div>
+</div>

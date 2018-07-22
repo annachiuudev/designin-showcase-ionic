@@ -1,0 +1,21 @@
+page-home {
+    font-family: $font-family-oxygen;
+
+    .image-container {
+        width: 100%; 
+        height: fit-content;
+        position: relative;
+    }
+
+    .image-container img{
+        width: 100%;
+
+    }
+
+    .card-content {
+        justify-content: center;
+        
+    }
+
+
+}

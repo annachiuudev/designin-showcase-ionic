@@ -1,0 +1,53 @@
+<ion-header>
+    <button (tap)="goBack()" class="header-left-btn" ion-button icon-only>
+        <ion-icon name="arrow-back"></ion-icon>
+    </button>
+    <!-- <p class="header-title">Comments</p> -->
+</ion-header>
+
+
+<ion-content>
+    <div class="review-dark">
+        <div class="review-dark-content">
+            <div class="circle-icon sm">
+                <img [src]="review.userImgUrl">
+            </div>
+            <p class="review-title">{{review.user.name}}</p>
+            <p class="review-text">{{review.body}} </p>
+        </div>
+    </div>
+
+
+    <div   class="chat-window">
+        <div *ngFor="let comment of comments" #messages>
+        <div *ngIf="comment.email != currentUserService.user.email" class="chat-entry other"   >
+            <div class="circle-icon sm">
+                <img [src]="comment.userImgUrl">
+            </div>
+            <div class="chat-bubble">
+                <p class="name">{{comment.name}}</p>
+                <p class="chat"> {{comment.body}}</p>
+                <p class="timestamp">{{timestampFormatted(comment.createDate)}}</p>
+            </div>
+        </div>
+
+        <div *ngIf="comment.email == currentUserService.user.email" class="chat-entry self"   >
+                <div class="circle-icon sm">
+                    <img [src]="comment.userImgUrl">
+                </div>
+                <div class="chat-bubble">
+                    <p class="name">{{comment.name}}</p>
+                    <p class="chat"> {{comment.body}}</p>
+                    <p class="timestamp">{{timestampFormatted(comment.createDate)}}</p>
+                </div>
+            </div>
+    </div>
+            
+    </div>
+
+    <div class="chat-bar flex flex-row justify-between">
+        <input type='text' placeholder="Your comment..." [(ngModel)]="newComment" (keydown)="onEnter($event)">
+        <button ion-button clear (tap)="onSendComment()">Send</button>        
+    </div>
+
+</ion-content>

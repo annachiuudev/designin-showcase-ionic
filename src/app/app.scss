@@ -1,0 +1,444 @@
+// http://ionicframework.com/docs/theming/
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+:root {
+    font-family: $font-family-oxygen !important;   
+    // font-size: 14px;
+    p {
+        margin: 0;
+        font-size: 14px;
+    }
+
+        --max-width: 414px;
+        --max-height: 736px
+    
+}
+
+
+@media (min-width: 414px) {
+    .app-root {
+      width: var(--max-width);
+      height: var(--max-height);
+      margin: auto;
+      position: relative;
+      box-shadow: 0 2px 4px 2px rgba(0,0,0,0.06);
+
+    }
+    
+    body {
+        display: flex;
+    }
+  
+    .scroll-content {
+      overflow-y:auto;
+      
+    }
+    html {
+      font-size: 12px;
+    }
+}
+
+  
+//CARD
+.card {
+    position: relative;
+}
+
+.card-content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+
+    padding: 20px;
+
+    p {
+        margin: 0;
+        color: white;
+    }
+
+    
+}
+
+.card-title {
+    font-size: 1.8rem !important;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.card-subtitle {
+    font-size: 1.2rem !important;
+}
+
+
+.linear-gray-overlay {
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, transparent, rgba(#111111, 0.8));
+    
+}
+
+//big-header
+.big-header {
+    height: 45%;
+    max-height: 500px;
+    background: color($colors, bg-gray);
+    p, ion-icon {
+        color: white;
+    }
+}
+
+
+.circle-icon  img{
+    clip-path: circle(40px at center);
+    width: auto;
+    height: 80px;
+}
+
+.circle-icon.sm img{
+    clip-path: circle(20px at center);
+    height: 40px;
+}
+
+
+
+
+//LAYOUT
+.flex {
+    display: flex;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.justify-between {
+    justify-content: space-between; 
+}
+
+
+.circle {
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+  }
+
+
+
+//ion-header 
+ion-header {
+    background: color($colors, bg-gray);
+    color: white;
+    height: 62px;
+
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    align-items: center;
+    justify-items: center;
+
+    .header-title {
+        text-align: center;
+        letter-spacing: 1.8px;
+        font-size: 1.6rem;
+        text-transform: uppercase;
+        font-weight: lighter; 
+
+        grid-column: 2;
+        justify-self: center;
+        align-self: center;
+        color: white;
+    }
+
+    .header-left-btn {
+        grid-column: 1;
+        justify-self: start;
+    }
+
+    .header-right-btn {
+        grid-column: 3;
+        justify-self: end;
+    }
+    
+    
+}
+    .bar-header {
+        border: 0px !important;
+        border-bottom-color: transparent !important;
+        background-image: none !important;
+        border-bottom: none !important;
+    }
+
+
+
+.header-md::after, .tabs-md[tabsPlacement="top"] > .tabbar::after, .footer-md::before, .tabs-md[tabsPlacement="bottom"] > .tabbar::before {
+    background-image: none;
+}
+
+
+//ion-segment
+ion-segment {
+
+    background: color($colors, dark);
+    opacity: 0.9;
+    height: 50px;
+    .segment-button{
+        color: white !important;
+        border: 0 !important;
+        text-transform: uppercase;
+    }
+
+    .segment-activated {
+        color: color($colors, primary) !important;
+        background: color($colors, dark) !important;
+
+    }
+}
+
+$color-primary: color($colors, primary);
+
+//like-switch 
+.icon-switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height:40px;
+    color: $color-primary;
+
+    ion-icon  {
+        transition: all 0.2s ease;
+    }
+  }
+  
+  /* Hide default HTML checkbox */
+  .icon-switch input {display:none;}
+
+  .icon-switch .icon-wrapper {
+    border: 1px solid $color-primary;
+    border-radius: 50%;
+    width: 40px;
+    height:40px;
+
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease;
+
+  }
+  
+  .checkmark {
+
+      transition: all 0.3s ease-in-out;
+  }
+
+  label.icon-switch {
+      margin: 0;
+  }
+  
+
+  input:checked + .checkmark {
+
+    ion-icon {
+        color: white;
+    }
+ 
+    .icon-wrapper {
+        background: $color-primary;
+    }
+  }
+
+
+  //button
+
+  .large-round-btn {
+      padding: 30px;
+  }
+
+  .button[icon-only] {
+      box-shadow: none;
+      background: transparent;
+  }
+
+  .button[icon-only]:hover {
+      opacity: 0.6;
+      background: transparent;
+  }
+  .button {
+    box-shadow: none;
+    font-size: 1.3rem !important;
+  }
+ 
+  .segment-button {
+    font-size: 1.2rem !important;
+
+  }
+
+  //input
+  .gray-input {
+      background: color($colors, stepper-gray);
+  }
+
+
+  input {
+      padding: 16px;
+      width: fill-available;
+      text-align: center;
+    color: white;
+  }
+
+
+  //Review 
+  .review-card {
+    padding: 20px 30px;
+    border-bottom: 1px solid color($colors, stepper-gray)
+}
+
+.review-content {
+    display: grid;
+    grid-template: 20px auto 20px / 70px auto;
+    justify-items: start;
+}
+
+.btn-bar {
+    grid-column: 2;
+    width: fill-available;
+}
+
+.circle-icon {
+    grid-row: 1;
+    grid-column: 1;
+}
+
+p {
+    color: color($colors, text-gray);
+}
+
+.review-title {
+    font-weight: bold !important;
+    margin-bottom: 10px;
+
+    grid-column: 2;
+}
+
+.review-text {
+    margin-bottom: 10px;
+    
+    grid-column: 2;
+    cursor: pointer;
+}
+
+
+.review-likes {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-left: 6px;
+}
+
+
+.like-display {
+    color: color($colors, text-light-gray);
+    ion-icon[name="heart"] {
+        font-size: 1.1rem;
+    }
+
+}
+
+.review-comment {
+    @extend .review-likes;
+
+}
+
+.comment-display {
+    @extend .like-display;
+    margin-left: 16px;
+    ion-icon[name="chatbubbles"] {
+        font-size: 1.1rem;
+    }
+}
+
+.comment-display:active {
+    ion-icon {
+        color: lighten(color($colors, text-gray), 30%);
+    }
+        color: lighten(color($colors, text-gray), 30%);
+    
+}
+
+.review-text:active {
+    color: lighten(color($colors, text-gray), 30%);
+    // font-size: 12px;
+}
+
+
+//chat bubble 
+.chat-entry {
+    display: flex;
+    margin-bottom: 20px;
+
+    &.self {
+        flex-direction: row-reverse;
+        .chat-bubble {
+            background: color($colors, primary);
+            p {color: white !important};
+        }
+    }
+}
+
+
+
+.chat-entry .circle-icon  img{
+    clip-path: circle(15px at center);
+    width: auto;
+    height: 30px;
+}
+
+.chat-bubble {
+    border-radius: 10px;
+    font-size: 1.2rem;
+    background: color($colors, stepper-gray);
+    width: fit-content;
+    max-width: 90%;
+    padding: 16px;
+    margin: 0 10px;
+
+    .timestamp {
+        opacity: 0.7;
+        font-size: 1rem;
+    }    
+
+    .name {
+        font-weight: bolder;
+        margin-bottom: 10px;
+    }
+}
+
+
+
+.chat-bubble .chat {
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+
+

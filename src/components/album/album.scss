@@ -1,0 +1,33 @@
+album {
+    padding: 16px;
+
+    .album-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        
+        grid-gap: 10px;
+
+        justify-items: center;
+        align-content: center;
+        
+        padding: 20px;
+        
+    }
+
+    img {
+        height: 140px;
+        widows: 140px;
+        align-self: stretch;
+    }
+
+    @media(min-width:376px) {
+        .album-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+        img {
+            height: 110px;
+            widows: 110px;
+        }
+    }
+}

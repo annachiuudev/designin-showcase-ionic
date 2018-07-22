@@ -1,0 +1,40 @@
+page-login {
+    font-family: $font-family-oxygen;
+    
+    .scroll-content {
+        padding: 30px;
+        overflow: hidden;
+        background: color($colors, bg-gray);
+        
+    }
+
+    .header-img {
+        height: 20%;
+        width: 100%;
+        // background: gray;
+    }
+
+   
+.login-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 80%;
+}
+ 
+
+    p, h1 {
+        text-align: center;
+        color: white;
+        opacity: 0.8;
+        font-weight: lighter;
+    }
+
+    input {
+        background: rgba($color: color($colors, stepper-gray), $alpha: 0.1);
+        border: none;
+        margin-bottom: 20px;
+        border-radius: 3px;
+    }
+}

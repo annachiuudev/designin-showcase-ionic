@@ -1,0 +1,23 @@
+
+reviews {
+
+   
+
+    .like-switch {
+        width: 10px;
+        height: 10px;
+    }
+
+
+  input:checked + .checkmark {
+    .ion-ios-heart-outline:before, .ion-md-heart-outline:before {
+        content: "\f443"
+    }
+
+    ion-icon {
+        color: color($colors, primary) !important;
+    }
+
+  }
+    
+}
